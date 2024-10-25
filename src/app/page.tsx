@@ -19,23 +19,23 @@ import benefitOneImg from "../../public/img/benefit-one.png";
 import benefitTwoImg from "../../public/img/benefit-two.png";
 
 const benefitOne = {
-  title: "Highlight your benefits",
+  title: "Benefits",
   desc: "You can use this space to highlight your first benefit or a feature of your product. It can also contain an image or Illustration like in the example along with some bullet points.",
   image: benefitOneImg,
   bullets: [
     {
-      title: "Understand your customers",
-      desc: "Then explain the first point breifly in one or two lines.",
+      title: "Your Adventure, On Demand",
+      desc: "From short hops to full-day escapes, enjoy flexible, on-demand boat rides tailored to your schedule.",
       icon: <FaceSmileIcon />,
     },
     {
-      title: "Improve acquisition",
-      desc: "Here you can add the next benefit point.",
+      title: "Trusted Local Captains",
+      desc: "Our community of experienced boat operators ensures you a safe and enjoyable journey every time.",
       icon: <ChartBarSquareIcon />,
     },
     {
-      title: "Drive customer retention",
-      desc: "This will be your last bullet point in this section.",
+      title: "Discover More with Ease",
+      desc: "Discover Colombia’s coast from a unique perspective. Book your ride today and start your next ocean adventure!",
       icon: <CursorArrowRaysIcon />,
     },
   ],
@@ -47,18 +47,18 @@ const benefitTwo = {
   image: benefitTwoImg,
   bullets: [
     {
-      title: "Mobile Responsive Template",
-      desc: "Nextly is designed as a mobile first responsive template.",
+      title: "Flexible Scheduling:",
+      desc: "Book rides at any time that suits you, with instant access to a range of local boat providers.",
       icon: <DevicePhoneMobileIcon />,
     },
     {
-      title: "Powered by Next.js & TailwindCSS",
-      desc: "This template is powered by latest technologies and tools.",
+      title: "Wide Range of Options",
+      desc: "From small fishing boats to luxury yachts, choose the vessel that fits your adventure.",
       icon: <AdjustmentsHorizontalIcon />,
     },
     {
-      title: "Dark & Light Mode",
-      desc: "Nextly comes with a zero-config light & dark mode. ",
+      title: "Support Local Communities",
+      desc: "Connect directly with local captains and help support the local economy with each trip.",
       icon: <SunIcon />,
     },
   ],
@@ -94,8 +94,6 @@ export default async function Home() {
         preTitle="Testimonials"
         title="Here's what our customers said"
       >
-        Testimonials is a great way to increase the brand trust and awareness.
-        Use this section to highlight your popular customers.
       </SectionTitle>
 
       <Testimonials />
