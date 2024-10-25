@@ -11,11 +11,9 @@ import {
 
 export const Navbar = () => {
   const navigation = [
-    "Product",
+    "Became a Boat Provider",
     "Features",
     "Pricing",
-    "Company",
-    "Blog",
   ];
 
   return (
