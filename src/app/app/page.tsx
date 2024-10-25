@@ -1,4 +1,5 @@
 
+'use client'
 import * as React from "react"
 import { Anchor, Ship, Calendar, MapPin, Star, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -12,8 +13,16 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import Link from "next/link"
+import { useState } from "react"
+
+function generateprice() {
+  const numero = Math.floor(Math.random() * 1000000);
+  return numero.toLocaleString("es-CO", { style: "currency", currency: "COP" });
+}
 
 export default function BoatRental() {
+  const [from, setFrom] = useState(null)
+  const [dest, setDest] = useState(null)
   return (
     <main className="flex-1">
       <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-[url('/placeholder.svg')] bg-cover bg-center">
@@ -30,7 +39,7 @@ export default function BoatRental() {
             <div className="w-full max-w-sm space-y-2">
               <form className="flex flex-col space-y-4 bg-white p-4 rounded-lg shadow-lg">
                 <div className="flex space-x-4">
-                  <Select>
+                  <Select value={from} onValueChange={setFrom}>
                     <SelectTrigger>
                       <SelectValue placeholder="From" />
                     </SelectTrigger>
@@ -40,7 +49,7 @@ export default function BoatRental() {
                       <SelectItem value="playa-grande">Playa Grande</SelectItem>
                     </SelectContent>
                   </Select>
-                  <Select>
+                  <Select value={dest} onValueChange={setDest}>
                     <SelectTrigger>
                       <SelectValue placeholder="To" />
                     </SelectTrigger>
@@ -56,6 +65,13 @@ export default function BoatRental() {
                   <Input type="time" placeholder="Time" />
                 </div>
                 <Input type="number" placeholder="Number of passengers" />
+                {from && dest && (
+                  <p className="mx-auto max-w-[700px] text-black md:text-sm">
+                    your price is {generateprice()}
+                  </p>
+                )
+
+                }
                 <Link href="/app/my-request">
                   <Button className="w-full">
                     Request
