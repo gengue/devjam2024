@@ -25,10 +25,14 @@ export default function BoatRental() {
   const [dest, setDest] = useState(null)
   return (
     <main className="flex-1">
-      <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-[url('/placeholder.svg')] bg-cover bg-center">
+      <section className="py-12 md:py-24 lg:py-32 xl:py-48 bg-[url('/img/background.jpg')] bg-cover bg-center">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
-            <div className="space-y-2">
+            <div className="space-y-2" style={{
+              background: '#0000001c',
+              borderRadius: '10px',
+              padding: '1rem',
+            }}>
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-white">
                 Discover Your Perfect Boat Trip
               </h1>
@@ -93,7 +97,7 @@ export default function BoatRental() {
                     alt={`${destination} coastline`}
                     className="w-full h-48 object-cover"
                     height="200"
-                    src="/placeholder.svg"
+                    src={`/img/places/${destination.replace(' ', '')}.jpg`}
                     style={{
                       aspectRatio: "300/200",
                       objectFit: "cover",
