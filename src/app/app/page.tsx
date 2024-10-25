@@ -73,7 +73,7 @@ export default function BoatRental() {
                 <div className="items-top flex space-x-2">
                   <Checkbox />
                   <p className="text-sm text-muted-foreground">
-                    you can donate 5% of the price to the SalvaLosOceanos Foundation.
+                    Donate 5% of the price to the SalvaLosOceanos Foundation.
                   </p>
                 </div>
 

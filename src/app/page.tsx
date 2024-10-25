@@ -42,8 +42,8 @@ const benefitOne = {
 };
 
 const benefitTwo = {
-  title: "Offer more benefits here",
-  desc: "You can use this same layout with a flip image to highlight your rest of the benefits of your product. It can also contain an image or Illustration as above section along with some bullet points.",
+  title: "And More",
+  desc: "",
   image: benefitTwoImg,
   bullets: [
     {
