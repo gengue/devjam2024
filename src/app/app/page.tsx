@@ -14,7 +14,8 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import Link from "next/link"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { motion } from "framer-motion";
 
 function generateprice() {
   const numero = Math.floor(Math.random() * 1000000);
@@ -97,27 +98,51 @@ export default function BoatRental() {
         <div className="container px-4 md:px-6">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Popular Destinations</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {["Taganga", "Santa Marta", "Playa Grande"].map((destination) => (
-              <Card key={destination}>
-                <CardContent className="p-0">
-                  <img
-                    alt={`${destination} coastline`}
-                    className="w-full h-48 object-cover"
-                    height="200"
-                    src={`/img/places/${destination.replace(' ', '')}.jpg`}
-                    style={{
-                      aspectRatio: "300/200",
-                      objectFit: "cover",
-                    }}
-                    width="300"
-                  />
-                  <div className="p-4">
-                    <h3 className="font-semibold text-lg">{destination}</h3>
-                    <p className="text-sm text-gray-500">Explore the beautiful beaches and crystal clear waters</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+            {["Taganga", "Santa Marta", "Playa Grande"].map((destination) => {
+              const [isVisible, setIsVisible] = useState(false);
+
+              useEffect(() => {
+                const onScroll = () => {
+
+                  const cardPosition = document.getElementById("card").getBoundingClientRect();
+                  if (cardPosition.top < window.innerHeight && cardPosition.bottom >= 0) {
+                    setIsVisible(true);
+                  }
+                };
+                window.addEventListener("scroll", onScroll);
+
+                return () => window.removeEventListener("scroll", onScroll);
+              }, []);
+
+              return (
+                <motion.div
+                  id="card"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: isVisible ? 1 : 0 }}
+                  transition={{ duration: 1 }}
+                >
+                  <Card key={destination}>
+                    <CardContent className="p-0">
+                      <img
+                        alt={`${destination} coastline`}
+                        className="w-full h-48 object-cover"
+                        height="200"
+                        src={`/img/places/${destination.replace(' ', '')}.jpg`}
+                        style={{
+                          aspectRatio: "300/200",
+                          objectFit: "cover",
+                        }}
+                        width="300"
+                      />
+                      <div className="p-4">
+                        <h3 className="font-semibold text-lg">{destination}</h3>
+                        <p className="text-sm text-gray-500">Explore the beautiful beaches and crystal clear waters</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              )
+            })}
           </div>
         </div>
       </section>
