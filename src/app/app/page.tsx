@@ -5,6 +5,7 @@ import { Anchor, Ship, Calendar, MapPin, Star, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
+import { Checkbox } from "@/components/ui/checkbox"
 import {
   Select,
   SelectContent,
@@ -74,8 +75,11 @@ export default function BoatRental() {
                     your price is {generateprice()}
                   </p>
                 )
-
                 }
+                <Checkbox />
+                <p className="text-sm text-muted-foreground">
+                  you can donate 5% of the price to the SalvaLosOceanos Foundation.
+                </p>
                 <Link href="/app/my-request">
                   <Button className="w-full">
                     Request
