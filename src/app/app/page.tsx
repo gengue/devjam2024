@@ -70,16 +70,19 @@ export default function BoatRental() {
                   <Input type="time" placeholder="Time" />
                 </div>
                 <Input type="number" placeholder="Number of passengers" />
+                <div className="items-top flex space-x-2">
+                  <Checkbox />
+                  <p className="text-sm text-muted-foreground">
+                    you can donate 5% of the price to the SalvaLosOceanos Foundation.
+                  </p>
+                </div>
+
                 {from && dest && (
                   <p className="mx-auto max-w-[700px] text-black md:text-sm">
                     your price is {generateprice()}
                   </p>
                 )
                 }
-                <Checkbox />
-                <p className="text-sm text-muted-foreground">
-                  you can donate 5% of the price to the SalvaLosOceanos Foundation.
-                </p>
                 <Link href="/app/my-request">
                   <Button className="w-full">
                     Request

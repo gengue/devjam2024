@@ -12,7 +12,9 @@ import {
   AdjustmentsHorizontalIcon,
   SunIcon,
 } from "@heroicons/react/24/solid";
-
+import { auth } from '@clerk/nextjs/server'
+import { redirect } from 'next/navigation'
+import { revalidatePath } from 'next/cache'
 import benefitOneImg from "../../public/img/benefit-one.png";
 import benefitTwoImg from "../../public/img/benefit-two.png";
 
@@ -62,9 +64,19 @@ const benefitTwo = {
   ],
 };
 
+export default async function Home() {
+  const { userId } = auth()
 
-export { benefitOne, benefitTwo };
-export default function Home() {
+  if (userId) {
+    if (userId === 'user_2nwG70hg9e4mDYqou0vrHlJdaTJ') {
+      revalidatePath('/app/p') // Update cached posts
+      redirect(`/app/p`)
+    } else {
+      revalidatePath('/app/') // Update cached posts
+      redirect(`/app/`)
+    }
+
+  }
   return (
     <Container>
       <Hero />
