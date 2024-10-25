@@ -26,7 +26,7 @@ export default function BoatRental() {
   const [dest, setDest] = useState(null)
   return (
     <main className="flex-1">
-      <section className="py-12 md:py-24 lg:py-32 xl:py-48 bg-[url('/img/background.jpg')] bg-cover bg-center">
+      <section className="py-2 md:py-24 lg:py-28 bg-[url('/img/background.jpg')] bg-cover bg-center">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2" style={{
