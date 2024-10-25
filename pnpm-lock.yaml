@@ -7,6 +7,9 @@ dependencies:
   '@headlessui/react':
     specifier: ^2.2.0
     version: 2.2.0(react-dom@19.0.0-rc-69d4b800-20241021)(react@19.0.0-rc-69d4b800-20241021)
+  '@heroicons/react':
+    specifier: ^2.1.5
+    version: 2.1.5(react@19.0.0-rc-69d4b800-20241021)
   '@hookform/resolvers':
     specifier: ^3.9.0
     version: 3.9.0(react-hook-form@7.53.1)
@@ -241,6 +244,14 @@ packages:
       '@tanstack/react-virtual': 3.10.8(react-dom@19.0.0-rc-69d4b800-20241021)(react@19.0.0-rc-69d4b800-20241021)
       react: 19.0.0-rc-69d4b800-20241021
       react-dom: 19.0.0-rc-69d4b800-20241021(react@19.0.0-rc-69d4b800-20241021)
+    dev: false
+
+  /@heroicons/react@2.1.5(react@19.0.0-rc-69d4b800-20241021):
+    resolution: {integrity: sha512-FuzFN+BsHa+7OxbvAERtgBTNeZpUjgM/MIizfVkSCL2/edriN0Hx/DWRCR//aPYwO5QX/YlgLGXk+E3PcfZwjA==}
+    peerDependencies:
+      react: '>= 16'
+    dependencies:
+      react: 19.0.0-rc-69d4b800-20241021
     dev: false
 
   /@hookform/resolvers@3.9.0(react-hook-form@7.53.1):
